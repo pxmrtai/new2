@@ -8,7 +8,10 @@ app.get('/todos',function(request, response){
     response.render('todos/index',{
         todos: [
             {name: 'đi chợ'},
-            {name: 'nấu cơm'}
+            {name: 'nấu cơm'},
+            {name: 'rửa bát'},
+            {name: 'học coderX'}
+          
 
         ]
     })
