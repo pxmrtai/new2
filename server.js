@@ -22,7 +22,9 @@ app.get('/todos',function(req,res){
   var matched = todos.filter(function(todo){
     return todo.name.indexOf(q) !== -1; 
   })
-  a
+  res.render('todos/index',{
+    todos : matched
+  })
 })
 
 
