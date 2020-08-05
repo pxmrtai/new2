@@ -11,8 +11,8 @@ var todo =[
           
 
         ]
-var todos =[
-            {name: 'đi chợ'},
+var nam =[
+            
             {name: 'nấu cơm'},
             {name: 'rửa bát'},
             {name: 'học coderX'}
@@ -26,7 +26,7 @@ app.get('/todos',function(request, response){
 })
 app.get('/todos',function(req,res){
    res.render('todos/index',{
-     todos:todos
+     nam:nam
    })
 })
 
