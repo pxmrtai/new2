@@ -12,7 +12,7 @@ var todos =[
         ]
 
         
-app.get('/todos',function(req, res){
+app.get('/',function(req, res){
     res.render('todos/index',{
         todos: todos
     })
