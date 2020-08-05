@@ -2,11 +2,7 @@ const express = require('express');
 const app = express(); 
 app.set('views', './views'); // Thư mục views nằm cùng cấp với file app.js
 app.set('view engine', 'pug'); // Sử dụng pug làm view engine
-
-
-app.get('/todos',function(request, response){
-    response.render('todos/index',{
-        todos: [
+var todos =[
             {name: 'đi chợ'},
             {name: 'nấu cơm'},
             {name: 'rửa bát'},
@@ -14,6 +10,18 @@ app.get('/todos',function(request, response){
           
 
         ]
+
+app.get('/todos',function(request, response){
+    response.render('todos/index',{
+        todos:todos
+    })
+})
+app.get('todos',function(req,res){
+  var q = req.query.q
+  var matchedTodos= todos.filter(function(todo){
+        return todo.name.toLowerCase().indexOf(q.toLowerCase()) !==  -1 })
+  res.render('todos/index',{
+        todos: matchedTodos
     })
 })
 
